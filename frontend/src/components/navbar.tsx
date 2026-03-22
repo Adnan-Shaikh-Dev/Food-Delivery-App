@@ -5,13 +5,13 @@ import {CgShoppingCart} from 'react-icons/cg'
 import {BiMapPin, BiSearch} from 'react-icons/bi'
 
 const Navbar = () => {
-    const {isAuth} = useAppData()
+    const {isAuth, city} = useAppData()
     const currLocation = useLocation()
 
     const isHomePage = currLocation.pathname === '/'
 
     const [searchParams, setSearchParams] = useSearchParams()
-    const [search, setSearch] = useState(searchParams.get('search'))
+    const [search, setSearch] = useState(searchParams.get('search')||"")
 
     useEffect(()=>{
         const timer = setTimeout(()=>{
@@ -51,7 +51,7 @@ const Navbar = () => {
 
                     <div className="flex items-center gap-2 px-3  text-gray-700">
                         <BiMapPin className="h-4 w-4 text-[#e23744]"/>
-                        <span className="text-sm truncate max-w-35">city</span>
+                        <span className="text-sm truncate max-w-35">{city}</span>
                     </div>
                     <div className="flex flex-1 items-center gap-2 px-3">
                         <BiSearch className="h-4 w-4 text-gray-400"/>
