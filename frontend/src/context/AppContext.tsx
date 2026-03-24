@@ -61,7 +61,11 @@ export const AppProvider = ({children}: AppProviderProps)=>{
                 })
 
                 setCity('Failed to loads')
+
                 console.log(err)
+            }
+            finally{
+                setLoadingLocation(false)
             }
         })
     },[])
