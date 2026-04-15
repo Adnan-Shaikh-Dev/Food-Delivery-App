@@ -1,7 +1,6 @@
 import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import {Toaster} from 'react-hot-toast'
 import ProtectedRoute from './components/protectedRoutes'
 import PublicRoute from './components/publicRoutes'
 import SelectRole from './pages/SelectRole'
@@ -36,7 +35,6 @@ const App = () => {
 
           </Route>
         </Routes>
-        <Toaster/>
       </BrowserRouter>
     </>
   )
