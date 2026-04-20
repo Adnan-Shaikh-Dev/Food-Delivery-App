@@ -119,7 +119,6 @@ const MenuItems = ({ items, onItemDeleted, isSeller }: MenuItemsProps) => {
                     ) : (
                       <BsCartPlus size={18} />
                     )}
-                  </button>
                 )}
               </div>
             </div>
