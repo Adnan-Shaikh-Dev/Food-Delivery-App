@@ -131,7 +131,7 @@ const AddAddressPage = () => {
         {
           formattedAddress,
           mobile,
-          latitude,
+          latitude
           longitude,
         },
         {
