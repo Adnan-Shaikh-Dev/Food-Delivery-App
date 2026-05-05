@@ -54,6 +54,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
+      console.log("cart data", data);
 
       setCart(data.cart || []);
       setSubTotal(data.subtotal || 0);
