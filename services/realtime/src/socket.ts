@@ -18,6 +18,7 @@ export const initSocket = (server: http.Server) => {
         return next(new Error("Unauthorized"));
       }
       const decoded = jwt.verify(token, process.env.JWT_SEC!) as any;
+      console.log(decoded);
       if (!decoded || !decoded.user) {
         return next(new Error("Unauthorized"));
       }
