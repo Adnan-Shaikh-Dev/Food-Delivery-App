@@ -5,7 +5,6 @@ import { useSocket } from "../context/SocketContext";
 import audio from "../assets/placedSoundZomato.mp3";
 import { restaurantService } from "../main";
 import axios from "axios";
-import { divIcon } from "leaflet";
 import OrderCard from "./OrderCard";
 
 const ACTIVE_STATUSES = [
@@ -50,7 +49,7 @@ const RestaurantOrders = ({ restaurantId }: { restaurantId: string }) => {
   const fetchOrders = async () => {
     try {
       const { data } = await axios.get(
-        `${restaurantService}/api/order/${restaurantId}`,
+        `${restaurantService}/api/order/restaurant/${restaurantId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

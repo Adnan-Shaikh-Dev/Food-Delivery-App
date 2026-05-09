@@ -10,10 +10,16 @@ import {
 } from "../controllers/Order.js";
 const router = express.Router();
 
-router.post("/new", isAuth, createOrder);
-router.get("/payment/:id", fetchOrderForPayment);
-router.get("/:restaurantId", isAuth, isSeller, fetchRestaurantOrders);
-router.put("/:orderId", isAuth, isSeller, updateOrderStatus);
 router.get("/my", isAuth, getMyOrders);
 router.get("/:id", isAuth, fetchSingleOrder);
+
+router.post("/new", isAuth, createOrder);
+router.get("/payment/:id", fetchOrderForPayment);
+router.get(
+  "/restaurant/:restaurantId",
+  isAuth,
+  isSeller,
+  fetchRestaurantOrders,
+);
+router.put("/:orderId", isAuth, isSeller, updateOrderStatus);
 export default router;
